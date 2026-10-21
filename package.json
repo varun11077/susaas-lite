@@ -1,0 +1,45 @@
+{
+  "name": "susaas-lite",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@sap/cds": "^10"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "^1.0.2",
+    "@cap-js/sqlite": "^3",
+    "vitest": "^5.0.5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "test": "vitest run"
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "[development]": {
+          "kind": "basic",
+          "users": {
+            "alice": {
+              "roles": [
+                "Admin",
+                "Member"
+              ]
+            },
+            "carol": {
+              "roles": [
+                "Member"
+              ]
+            },
+            "dave": {
+              "roles": [
+                "Member"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "private": true
+}
